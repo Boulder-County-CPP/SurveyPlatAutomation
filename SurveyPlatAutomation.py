@@ -1,6 +1,6 @@
 #-------------------------------------------------------------------------------
 # Name:        SurveyPlatAutomation
-# Purpose:  {Brief description of what this script}
+# Purpose:  {Brief description of what this script does}
 # 
 # Author:      sgambrel@bouldercounty.gov, mlauer@bouldercounty.gov
 #
@@ -11,7 +11,8 @@ from datetime import date, datetime, timedelta
 import os
 import time
 
-import arcpy
+import arcgis
+from decouple import config
 import pypyodbc
 
 import smtplib
@@ -20,7 +21,7 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 
-accela_connection_string = ()
+ACCELA_CONNECT = config('ACCELA_CONNECT')
 
 def main():
 
